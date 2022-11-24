@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, session, redirect, request
 
 
 pages = Blueprint(
@@ -12,3 +12,14 @@ def index():
         "index.html",
         title="Movies Watchlist",
     )
+    
+    
+@pages.route("/toggle-theme")
+def toggle_theme():
+    currrent_theme = session.get("theme")
+    if currrent_theme == "dark":
+        session["theme"] = "light"
+    else:
+        session["theme"] = "dark"
+        
+    return redirect(request.args.get("current_page"))
