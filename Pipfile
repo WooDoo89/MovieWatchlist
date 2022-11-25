@@ -12,6 +12,7 @@ pymongo = {extras = ["srv"], version = "*"}
 flask-security = "*"
 email-validator = "*"
 passlib = "*"
+flake8 = "*"
 black = "*"
 
 [dev-packages]
