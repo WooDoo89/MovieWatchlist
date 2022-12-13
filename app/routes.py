@@ -2,6 +2,7 @@ import functools
 import uuid
 import datetime
 from dataclasses import asdict
+from flask_weasyprint import HTML, render_pdf
 
 from flask import (
     Blueprint,
